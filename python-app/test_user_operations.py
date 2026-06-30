@@ -25,7 +25,7 @@ def cosmos_container():
     print("Database deleted")
 
 def test_create_user(cosmos_container):
-    test_user = User(id="42", email="user42@example.com", active=True)
+    test_user = User(id="42", email="user42@gmail.com", active=True)
     
     # Verify that create_user does not raise an exception
     try:
@@ -37,7 +37,7 @@ def test_create_user(cosmos_container):
 def test_read_user(cosmos_container):
 
     test_user_id = "43"
-    test_user = User(id=test_user_id, email="user43@example.com", active=True)
+    test_user = User(id=test_user_id, email="user43@gmail.com", active=True)
     
     try:
         create_user(cosmos_container, test_user)
@@ -48,7 +48,7 @@ def test_read_user(cosmos_container):
     user = read_user(cosmos_container, test_user_id)
     
     assert test_user_id == user.id
-    assert "user43@example.com" == user.email
+    assert "user43@gmail.com" == user.email
     assert user.active
     
     print("User read test complete")

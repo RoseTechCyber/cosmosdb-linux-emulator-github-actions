@@ -18,7 +18,7 @@ def create_user(container: ContainerProxy, user: User):
         container.create_item(body=user.to_dict())
         print("Created user:", user.to_dict())
     except Exception as e:
-        print("Error creating user", e)
+        print("Error creating user id", e)
         raise e
 
 def read_user(container: ContainerProxy, user_id: str) -> User:
